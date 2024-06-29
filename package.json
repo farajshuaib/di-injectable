@@ -11,7 +11,7 @@
   "homepage": "https://github.com/farajshuaib/injectable",
   "repository": {
     "type": "git",
-    "url": "https://github.com/farajshuaib/injectable.git"
+    "url": "git+https://github.com/farajshuaib/injectable.git"
   },
   "author": "Faraj Shuaib",
   "description": "A simple dependency injection library for TypeScript",
