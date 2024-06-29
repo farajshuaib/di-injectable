@@ -3,12 +3,24 @@
   "version": "1.0.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "license": "MIT",
+  "private": false,
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "homepage": "https://github.com/farajshuaib/injectable",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/farajshuaib/injectable.git"
+  },
+  "author": "Faraj Shuaib",
+  "description": "A simple dependency injection library for TypeScript",
   "files": [
     "dist"
   ],
   "scripts": {
-  "build": "tsc"
-},
+    "build": "tsc"
+  },
   "devDependencies": {
     "@types/node": "^20.14.9",
     "typescript": "^5.5.2"
