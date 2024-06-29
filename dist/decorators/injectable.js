@@ -4,10 +4,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Injectable = Injectable;
-exports.Inject = Inject;
 require("reflect-metadata");
-var ServiceCollection_1 = __importDefault(require("./ServiceCollection"));
-var ServiceLifetime_1 = require("./enums/ServiceLifetime");
+var ServiceCollection_1 = __importDefault(require("../ServiceCollection"));
+var ServiceLifetime_1 = require("../enums/ServiceLifetime");
 function Injectable(lifetime) {
     if (lifetime === void 0) { lifetime = ServiceLifetime_1.ServiceLifetime.Transient; }
     return function (target) {
@@ -23,12 +22,5 @@ function Injectable(lifetime) {
             default:
                 throw new Error("Invalid lifetime type");
         }
-    };
-}
-function Inject(token) {
-    return function (target, propertyKey, parameterIndex) {
-        var existingInjectedTokens = Reflect.getOwnMetadata("design:paramtypes", target) || [];
-        existingInjectedTokens[parameterIndex] = token;
-        Reflect.defineMetadata("design:paramtypes", existingInjectedTokens, target);
     };
 }
