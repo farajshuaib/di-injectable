@@ -1,4 +1,4 @@
-# Injectable
+# DI-Injectable
 
 A simple Dependency Injection (DI) library for TypeScript supporting Singleton and Transient service lifetimes.
 
@@ -8,9 +8,9 @@ First, install the package via npm or yarn:
 
 ```sh
 
-npm install injectable
+npm install di-injectable
 
-yarn add injectable
+yarn add di-injectable
 
 ```
 
@@ -76,16 +76,16 @@ console.log(user);
 ## Explanation
 
 - Defining Services:
-  - The Logger service is a simple logger class.
-  - The UserService class depends on the Logger service. The @Inject decorator is used to inject the Logger service 
+  - The `Logger` service is a simple logger class.
+  - The `UserService` class depends on the `Logger` service. The `@Inject` decorator is used to inject the `Logger` service 
   - into the UserService constructor.
 - Registering Services:
-  - We register the Logger service as a Singleton, meaning only one instance of Logger will be created and shared.
-  - We register the UserService as a Transient by default, meaning a new instance of UserService will be created every time it is resolved.
+  - We register the `Logger` service as a Singleton, meaning only one instance of `Logger` will be created and shared.
+  - We register the `UserService` as a Transient by default, meaning a new instance of `UserService` will be created every time it is resolved.
 - Resolving Services:
-  - We create a ServiceProvider instance and pass the ServiceCollection to it.
-  - We resolve an instance of UserService using the serviceProvider.
-The UserService will have the Logger instance injected into it due to the @Inject decorator.
+  - We create a `ServiceProvider` instance.
+  - We resolve an instance of `UserService` using the `serviceProvider`.
+The `UserService` will have the `Logger` instance injected into it due to the `@Inject` decorator.
 
 
 ## Service Lifetimes
@@ -97,9 +97,9 @@ The UserService will have the Logger instance injected into it due to the @Injec
 
 
 - ServiceProvider:
-  - resolve<T>(token: any): T: Resolves an instance of the service.
-  - Injectable: Decorator to mark a class as injectable as register it.
-  - Inject: Decorator to inject dependencies into the constructor.
+  - `resolve<T>(token: any): T`: Resolves an instance of the service.
+  - `Injectable`: Decorator to mark a class as injectable as register it.
+  - `Inject`: Decorator to inject dependencies into the constructor.
 
 
 ## Contributing
